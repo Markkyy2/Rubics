@@ -1,0 +1,263 @@
+:root {
+  --fondo: linear-gradient(#e0c4fd, #8fc6fd);
+  --rojo: rgb(255, 26, 72);
+  --verde: #1df169;
+  --naranja: rgb(255, 104, 48);
+  --azul: rgb(41, 41, 239);
+  --blanco: white;
+  --amarillo: #ffed2b;
+  --negro: rgb(29, 29, 29);
+  --gris: rgb(56, 56, 56);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: var(--fondo);
+}
+
+a {
+  text-decoration: none;
+}
+
+/* /////////////////////////////////// */
+
+.cubo {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  transform-style: preserve-3d;
+}
+
+#cubo1 {
+  transform: rotateX(-50deg) rotateY(25deg) rotateZ(0deg);
+  animation: cubo 5s linear infinite;
+
+  /* transform: rotateX(25deg); */
+}
+.contenedor-caras {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  transform-style: preserve-3d;
+}
+
+.cara {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+  flex-wrap: wrap;
+  background-color: var(--gris);
+}
+
+#cara1,
+#cara2,
+#cara3,
+#cara4 {
+  width: 100%;
+  height: 60%;
+}
+
+/* cara rojo */
+#cara1 {
+  transform: rotateY(0deg) translateZ(100px);
+}
+/* cara verde */
+#cara2 {
+  transform: rotateY(90deg) translateZ(100px);
+}
+/* cara naranja */
+#cara3 {
+  transform: rotateY(180deg) translateZ(100px);
+}
+/* cara azul */
+#cara4 {
+  transform: rotateY(270deg) translateZ(100px);
+}
+/* cara blanco */
+#cara5 {
+  transform: rotateX(90deg) translateZ(100px);
+}
+/* cara amarillo */
+#cara6 {
+  transform: rotateX(90deg) rotateY(180deg) translateZ(20px);
+}
+
+.cara > div {
+  width: calc(100% / 3);
+  height: calc(100% / 3);
+  border: 4px solid var(--negro);
+  position: relative;
+  border-radius: 12px;
+}
+
+#cara1 > div,
+#cara2 > div,
+#cara3 > div,
+#cara4 > div {
+  width: calc(100% / 3);
+  height: 50%;
+}
+
+#cara1 > div {
+  background-color: var(--rojo);
+}
+#cara2 > div {
+  background-color: var(--verde);
+}
+#cara3 > div {
+  background-color: var(--naranja);
+}
+#cara4 > div {
+  background-color: var(--azul);
+}
+#cara5 > div {
+  background-color: var(--blanco);
+}
+#cara6 > div {
+  background-color: var(--gris);
+}
+
+@keyframes cubo {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+
+  to {
+    transform: rotateX(-360deg) rotateY(360deg);
+  }
+}
+
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+
+#cubo2 {
+  transform: rotateX(180deg) rotateY(25deg) rotateZ(0deg) translateY(20px);
+  animation: rotar 4s infinite linear;
+}
+
+@keyframes rotar {
+  from {
+    transform: rotateX(180deg) rotateY(360deg) rotateZ(0deg) translateY(20px);
+  }
+  to {
+    transform: rotateX(180deg) rotateY(0deg) rotateZ(0deg) translateY(20px);
+  }
+}
+
+#cara7,
+#cara8,
+#cara9,
+#cara10 {
+  width: 100%;
+  height: 30%;
+}
+/* cara rojo */
+#cara7 {
+  transform: rotateY(0deg) translateZ(100px);
+}
+/* cara verde */
+#cara8 {
+  transform: rotateY(90deg) translateZ(100px);
+}
+/* cara naranja */
+#cara9 {
+  transform: rotateY(180deg) translateZ(100px);
+}
+/* cara azul */
+#cara10 {
+  transform: rotateY(270deg) translateZ(100px);
+}
+/* cara blanco */
+#cara11 {
+  transform: rotateX(90deg) translateZ(100px);
+}
+/* cara amarillo */
+#cara12 {
+  transform: rotateX(90deg) rotateY(180deg) translateZ(-40px);
+}
+
+#cara7 > div,
+#cara8 > div,
+#cara9 > div,
+#cara10 > div {
+  width: calc(100% / 3);
+  height: 100%;
+}
+
+#cara7 > div {
+  background-color: var(--naranja);
+}
+#cara8 > div {
+  background-color: var(--verde);
+}
+#cara9 > div {
+  background-color: var(--rojo);
+}
+#cara10 > div {
+  background-color: var(--azul);
+}
+#cara11 > div {
+  background-color: var(--amarillo);
+}
+#cara12 > div {
+  background-color: var(--gris);
+}
+
+/* FOOTER////////////////////////// */
+.footer {
+  background-color: #1c1d1f;
+  color: rgb(255, 255, 255);
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  bottom: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 550;
+  letter-spacing: 0.2px;
+  font-size: 1.1rem;
+}
+.footer span {
+  cursor: pointer;
+}
+
+.link,
+.fa-github {
+  color: #c5b4ff;
+  transition: 0.5s;
+}
+.fa-star {
+  color: #ffff7e;
+  font-size: 90%;
+}
+.contenedor-github:hover .fa-github,
+.contenedor-github:hover .link {
+  color: rgb(148, 170, 255);
+}
+.contador-visitas {
+  position: fixed;
+  bottom: 0px;
+  z-index: -1;
+}
